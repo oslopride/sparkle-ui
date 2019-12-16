@@ -2,7 +2,9 @@
   "name": "sparkle",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "styled-system": "^5.1.4"
+  },
   "peerDependencies": {
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
