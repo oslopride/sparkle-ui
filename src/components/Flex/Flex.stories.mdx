@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 
 import Flex from './';
 
-<Meta title="OBF Kit|Flex" component={Flex} />
+<Meta title="Sparkle|Flex" component={Flex} />
 
 # Flex
 
@@ -14,7 +14,10 @@ Use it anywhere you need a flex container.
 
 <Preview withToolbar>
   <Story name="standard">
-    <Flex>Content</Flex>
+    <Flex>
+      <Flex mr={3}>Content 1</Flex>
+      <Flex>Content 2</Flex>
+    </Flex>
   </Story>
 </Preview>
 
