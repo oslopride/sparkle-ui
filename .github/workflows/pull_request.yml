@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v1
         with:
           fetch-depth: 1
-      - run: scripts/setup-npmrc
+      - run: scripts/setup-npmrc.sh
         env:
           CI: true
       - run: npm install
