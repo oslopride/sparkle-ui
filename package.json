@@ -13,7 +13,10 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
-  "repository": "git://github.com/oslopride/sparkle",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oslopride/sparkle.git"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "BABEL_ENV=production babel ./src --out-dir build --extensions \".ts,.tsx\"",
