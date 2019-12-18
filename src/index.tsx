@@ -6,7 +6,11 @@ export { styles, global };
 
 // because of --isolatedModules, types cannot be exported directly 🤷‍
 import { FlexProps as FlexPropsExport } from './components/Flex'
+import { BoxProps as BoxPropsExport} from './components/Box'
+
 export type FlexProps = FlexPropsExport;
+export type BoxProps = BoxPropsExport
 
 export { default as Button } from './components/Button';
 export { default as Flex } from './components/Flex';
+export { default as Box } from './components/Box'
