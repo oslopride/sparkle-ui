@@ -1,5 +1,5 @@
 {
-  "name": "sparkle",
+  "name": "@oslopride/sparkle",
   "version": "0.1.0",
   "private": true,
   "dependencies": {},
@@ -8,9 +8,14 @@
     "react-dom": "^16.10.1",
     "styled-components": "^4"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": "https://github.com/oslopride/sparkle",
   "scripts": {
     "start": "react-scripts start",
-    "build": "SET BABEL_ENV=production&&babel ./src --out-dir build --extensions \".ts,.tsx\" --ignore \"src/**/*.test.tsx\",\"src/**/*.stories.tsx\"",
+    "build": "BABEL_ENV=production babel ./src --out-dir build --extensions \".ts,.tsx\"",
+    "postbuild": "tsc -p tsconfig.declaration.json",
     "test": "react-scripts test",
     "coverage": "react-scripts test --coverage",
     "eject": "react-scripts eject",
@@ -18,6 +23,11 @@
     "build-storybook": "build-storybook -s public",
     "build-storybook-docs": "build-storybook -s public --docs"
   },
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build/"
+  ],
   "babel": {
     "presets": [
       "react-app",
