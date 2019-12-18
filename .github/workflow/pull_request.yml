@@ -1,0 +1,27 @@
+name: Build
+on:
+  - pull_request
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - run: scripts/setup-npmrc
+        env:
+          CI: true
+      - run: npm install
+        env:
+          NPM_TOKEN: ${{ secrets.GH_TOKEN }}
+      - run: npm run build
+        env:
+          NPM_TOKEN: ${{ secrets.GH_TOKEN }}
+      - run: npm run test
+        env:
+          NPM_TOKEN: ${{ secrets.GH_TOKEN }}
+          CI: true
+      - run: npm run build-storybook
+        env:
+          NPM_TOKEN: ${{ secrets.GH_TOKEN }}
