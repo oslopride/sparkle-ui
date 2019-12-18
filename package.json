@@ -35,13 +35,27 @@
   ],
   "babel": {
     "presets": [
-      "react-app",
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ],
       "@babel/preset-env",
       "@babel/typescript"
     ],
     "plugins": [
       "@babel/proposal-class-properties",
       "@babel/proposal-object-rest-spread"
+    ],
+    "ignore": [
+      "src/**/*.test.tsx",
+      "src/**/*.stories.tsx",
+      "./node_modules/*"
+    ],
+    "include": [
+      "src/**/*.tsx",
+      "src/**/*.ts"
     ]
   },
   "browserslist": {
