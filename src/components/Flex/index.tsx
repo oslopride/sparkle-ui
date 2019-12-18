@@ -14,7 +14,7 @@ import {
     ColorProps,
   } from 'styled-system';
 
-  type FlexProps = FlexboxProps & SpaceProps & BorderProps & LayoutProps & TypographyProps & ColorProps;
+  export type FlexProps = FlexboxProps & SpaceProps & BorderProps & LayoutProps & TypographyProps & ColorProps;
 
   const Flex = styled.div<FlexProps>`
   display: flex;
