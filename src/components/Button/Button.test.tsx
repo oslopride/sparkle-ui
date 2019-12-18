@@ -5,7 +5,7 @@ import Button from './';
 
 describe('Button', () => {
   test('no basic accessibility issues', async () => {
-    const { container } = render(<Button />);
+    const { container } = render(<Button>test</Button>);
     const result = await axe(container);
 
     expect(result).toHaveNoViolations();
@@ -13,7 +13,7 @@ describe('Button', () => {
 
   test('onClick handler works', async () => {
     const onClickFn = jest.fn();
-    const { getByTestId } = render(<Button onClick={onClickFn} />);
+    const { getByTestId } = render(<Button onClick={onClickFn}>test</Button>);
 
     const buttonElement = getByTestId('button');
     fireEvent.click(buttonElement);
