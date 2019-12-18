@@ -14,13 +14,13 @@ jobs:
       - run: scripts/setup-npmrc.sh
         env:
           CI: true
-      - run: npm install
+      - run: yarn
         env:
           NPM_TOKEN: ${{ secrets.GH_TOKEN }}
-      - run: npm run build
+      - run: yarn build
         env:
           NPM_TOKEN: ${{ secrets.GH_TOKEN }}
-      - run: npm run test
+      - run: yarn test
         env:
           NPM_TOKEN: ${{ secrets.GH_TOKEN }}
           CI: true
