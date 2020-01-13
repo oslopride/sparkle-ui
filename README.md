@@ -24,7 +24,7 @@ There is an automated Github Action workflow set up that will do checks for any 
 1. `git clone git@github.com:oslopride/sparkle.git && cd sparkle`
 2. `yarn`
 3. Create a new branch. We are not using any fancy feature branches or the likes, so name them whatever makes sense. Fixing a problem with the Button component? `git checkout -b fix-button` will probably suffice!
-4. Do your work!
+4. Just run `yarn run plop` , write the name of you component and you will get the files you need. Now do your work!
 5. Do your best attempt to adhere to the commit guidelines by using the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) structure for your commit messages. If you never used it before it might be a bit confusing, but don't worry, it's pretty easy to get used to!
 We use semantic versioning for our library, which means a version like `2.4.1` means `2` is the MAJOR version, `4` is the MINOR version, and `1` is the PATCH version. When adding a new **feature**, the MINOR version will be increased. This is the most common version increase. **Fixing** something will increase the PATCH version. A MAJOR version should not occur very often, and is mostly aimed at when we make any breaking changes to our public API, e.g. we totally change how a component works, the props it takes, or something similar.
  So, how does this work in practice? It's as simple as when you create a new **feature**, make your commit message like this example: `feat(Button): add cool prop`. **Fixing** something: `fix(Button): make cool prop optional`.

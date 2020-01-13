@@ -26,7 +26,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "build-storybook-docs": "build-storybook -s public --docs"
+    "build-storybook-docs": "build-storybook -s public --docs",
+    "plop": "plop"
   },
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -108,6 +109,7 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
     "jest-axe": "^3.2.0",
+    "plop": "^2.5.3",
     "prettier": "^1.18.2",
     "react": "^16.10.1",
     "react-docgen-typescript-loader": "^3.3.0",
