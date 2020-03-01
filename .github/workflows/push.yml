@@ -13,8 +13,8 @@ jobs:
           fetch-depth: 1
       # Setup .npmrc file to publish to GitHub Packages
       - run: scripts/setup-npmrc.sh
-      env:
-        CI: true
+        env:
+          CI: true
       - run: yarn
       - run: yarn core publish
         env:
