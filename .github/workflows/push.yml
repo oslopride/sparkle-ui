@@ -11,22 +11,12 @@ jobs:
       - uses: actions/checkout@v1
         with:
           fetch-depth: 1
-      - run: scripts/setup-npmrc.sh
-        env:
-          CI: true
+      # Setup .npmrc file to publish to GitHub Packages
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+          registry-url: 'https://npm.pkg.github.com'
       - run: yarn
+      - run: yarn core publish
         env:
           NPM_TOKEN: ${{ secrets.GH_TOKEN }}
-      - run: yarn build
-        env:
-          NPM_TOKEN: ${{ secrets.GH_TOKEN }}
-      - run: yarn test
-        env:
-          NPM_TOKEN: ${{ secrets.GH_TOKEN }}
-          CI: true
-      - run: npx semantic-release
-        env:
-          CI: true
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.GH_TOKEN }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}

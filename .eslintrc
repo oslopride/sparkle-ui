@@ -1,0 +1,26 @@
+{
+    "extends": ["airbnb", "plugin:prettier/recommended", "prettier/react"],
+    "plugins": ["prettier"],
+    "env": {
+        "browser": true,
+        "jest": true
+    },
+    "rules": {
+        "prettier/prettier": ["error"],
+        "import/prefer-default-export": "off",
+        "import/extensions": "off",
+        "react/require-default-props": "off",
+        "react/no-array-index-key": "off",
+        "react/jsx-props-no-spreading": "off",
+        "no-param-reassign": "off",
+        "no-unused-expressions": ["error", { "allowShortCircuit": true }],
+        "react/forbid-prop-types": "off",
+        "react/no-unused-prop-types": "warn",
+        "no-use-before-define": "off",
+        "func-names": "off",
+        "no-plusplus": "off",
+        "class-methods-use-this": "off",
+        "no-shadow": "warn",
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    }
+}

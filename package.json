@@ -1,121 +1,27 @@
 {
-  "name": "@oslopride/sparkle",
+  "private": true,
+  "name": "sparkle",
   "version": "0.0.0-development",
-  "dependencies": {
-    "@types/styled-system": "^5.1.4",
-    "styled-system": "^5.1.4"
-  },
-  "peerDependencies": {
-    "react": "^16.10.1",
-    "react-dom": "^16.10.1",
-    "styled-components": "^4"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/oslopride/sparkle.git"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "BABEL_ENV=production babel ./src --out-dir build --extensions \".ts,.tsx\"",
-    "postbuild": "tsc -p tsconfig.declaration.json",
-    "test": "react-scripts test",
-    "coverage": "react-scripts test --coverage",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public",
-    "build-storybook-docs": "build-storybook -s public --docs",
-    "plop": "plop"
-  },
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
-  "files": [
-    "build/"
+  "workspaces": [
+    "packages/*"
   ],
-  "babel": {
-    "presets": [
-      [
-        "react-app",
-        {
-          "absoluteRuntime": false
-        }
-      ],
-      "@babel/preset-env",
-      "@babel/typescript"
-    ],
-    "plugins": [
-      "@babel/proposal-class-properties",
-      "@babel/proposal-object-rest-spread"
-    ],
-    "ignore": [
-      "src/**/*.test.tsx",
-      "src/**/*.stories.tsx",
-      "./node_modules/*"
-    ],
-    "include": [
-      "src/**/*.tsx",
-      "src/**/*.ts"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "scripts": {
+    "core": "yarn workspace @sparkle/core",
+    "react": "yarn workspace @sparkle/react"
   },
   "devDependencies": {
-    "@babel/cli": "^7.6.2",
-    "@babel/core": "^7.6.2",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
-    "@babel/preset-env": "^7.6.2",
-    "@babel/preset-typescript": "^7.6.0",
-    "@babel/register": "^7.6.2",
-    "@storybook/addon-a11y": "^5.2.1",
-    "@storybook/addon-actions": "^5.2.1",
-    "@storybook/addon-docs": "^5.2.1",
-    "@storybook/addon-info": "^5.2.1",
-    "@storybook/addon-knobs": "^5.2.1",
-    "@storybook/addon-links": "^5.2.1",
-    "@storybook/addon-storysource": "^5.2.1",
-    "@storybook/addons": "^5.2.1",
-    "@storybook/react": "^5.2.1",
-    "@testing-library/jest-dom": "^4.1.0",
-    "@testing-library/react": "^9.3.0",
-    "@types/jest": "24.0.18",
-    "@types/jest-axe": "^2.2.4",
-    "@types/node": "^12.7.11",
-    "@types/react": "16.9.4",
-    "@types/react-dom": "16.9.1",
-    "@types/storybook__addon-info": "^4.1.2",
-    "@types/storybook__react": "^4.0.2",
-    "@types/styled-components": "^4.1.19",
-    "@types/webpack": "^4.39.2",
-    "@typescript-eslint/eslint-plugin": "^2.3.2",
-    "@typescript-eslint/parser": "^2.3.2",
-    "awesome-typescript-loader": "^5.2.1",
-    "babel-loader": "^8.0.6",
-    "eslint": "^6.5.1",
-    "eslint-config-prettier": "^6.3.0",
-    "eslint-config-react": "^1.1.7",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-react": "^7.16.0",
-    "jest-axe": "^3.2.0",
-    "plop": "^2.5.3",
-    "prettier": "^1.18.2",
-    "react": "^16.10.1",
-    "react-docgen-typescript-loader": "^3.3.0",
-    "react-dom": "^16.10.1",
-    "react-scripts": "3.2.0",
-    "styled-components": "^4.4.0",
-    "typescript": "3.6.3"
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "prettier": "^1.19.1"
   }
 }

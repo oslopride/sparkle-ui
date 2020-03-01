@@ -9,19 +9,4 @@ jobs:
       - uses: actions/checkout@v1
         with:
           fetch-depth: 1
-      - run: scripts/setup-npmrc.sh
-        env:
-          CI: true
       - run: yarn
-        env:
-          NPM_TOKEN: ${{ secrets.GH_TOKEN }}
-      - run: yarn build
-        env:
-          NPM_TOKEN: ${{ secrets.GH_TOKEN }}
-      - run: yarn test
-        env:
-          NPM_TOKEN: ${{ secrets.GH_TOKEN }}
-          CI: true
-      - run: yarn build-storybook
-        env:
-          NPM_TOKEN: ${{ secrets.GH_TOKEN }}
