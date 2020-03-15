@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "publish-ci": "lerna publish from-package -y --no-verify-access",
-    "core": "yarn workspace @oslopride/sparkle-core"
+    "core": "yarn workspace @sparkle/core"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
