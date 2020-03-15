@@ -2,11 +2,12 @@ name: Build
 on:
   - pull_request
 jobs:
+  
   build:
-    name: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
-          fetch-depth: 1
+          node-version: 12
       - run: yarn

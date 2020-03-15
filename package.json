@@ -10,6 +10,7 @@
     "packages/*"
   ],
   "scripts": {
+    "publish-ci": "lerna publish from-package -y --no-verify-access",
     "core": "yarn workspace @oslopride/sparkle-core"
   },
   "devDependencies": {
@@ -22,5 +23,9 @@
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "prettier": "^1.19.1"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.6.1",
+    "lerna": "^3.20.2"
   }
 }
