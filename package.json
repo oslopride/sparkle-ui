@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "publish-ci": "lerna publish from-package -y --no-verify-access",
-    "core": "yarn workspace @sparkle-ui/core"
+    "core": "yarn workspace @sparkle-ui/core",
+    "react": "yarn workspace @sparkle-ui/react"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
