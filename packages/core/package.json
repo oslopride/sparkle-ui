@@ -1,4 +1,7 @@
 {
-    "name": "@sparkle/core",
-    "version": "0.0.0-development"
+  "name": "core",
+  "version": "0.0.1",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
 }
