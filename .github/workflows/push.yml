@@ -4,18 +4,17 @@ on:
     branches:
       - master
 jobs:
-  release:
-    name: release
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-        with:
-          fetch-depth: 1
-      # Setup .npmrc file to publish to GitHub Packages
-      - run: scripts/setup-npmrc.sh
-        env:
-          CI: true
-      - run: yarn
-      - run: yarn core publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - uses: actions/checkout@v2
+    # Setup .npmrc file to publish to GitHub Packages
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+        registry-url: 'https://npm.pkg.github.com'
+        scope: '@oslopride'
+    - run: yarn
+    - run: yarn core publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
